@@ -4,15 +4,13 @@ import { TodosContextProvider } from "./store/todos-context";
 
 function App() {
     return (
-        <div>
-            <Switch>
-                <Route path="/" exact>
-                    <TodosContextProvider>
-                        <Home />
-                    </TodosContextProvider>
-                </Route>
-            </Switch>
-        </div>
+        <Switch>
+            <Route path="/" exact>
+                <TodosContextProvider>
+                    <Home />
+                </TodosContextProvider>
+            </Route>
+        </Switch>
     );
 }
 

@@ -51,17 +51,23 @@ function Home() {
     }, []);
 
     return (
-        <div>
-            <form onSubmit={addTodo}>
-                <input
+        <div
+            className="text-black border border-white border-opacity-25 rounded-2xl 
+            backdrop-filter backdrop-blur-md self-center p-8 
+            bg-white bg-opacity-25"
+        >
+            <form className="mb-4 flex flex-row" onSubmit={addTodo}>
+                <input className="border-2 flex-grow bg-transparent rounded-md border-black py-2 px-4 mr-3 placeholder-black placeholder-opacity-50"
                     type="text"
-                    placeholder="List your to do"
+                    placeholder="To do"
                     ref={refTodoInput}
                 />
-                <button onClick={addTodo}>Submit</button>
+                <button className="bg-black py-2 px-4 rounded-md text-white" onClick={addTodo}>List</button>
             </form>
-            <Todos data={oTodosContext.aNewTodos} type="new"></Todos>
-            <Todos data={oTodosContext.aDoneTodos} type="done"></Todos>
+            <div className="divide-y divide-black divide-opacity-25">
+                <Todos data={oTodosContext.aNewTodos} type="new"></Todos>
+                <Todos data={oTodosContext.aDoneTodos} type="done"></Todos>
+            </div>
         </div>
     );
 }
